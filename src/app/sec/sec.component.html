@@ -1,0 +1,10 @@
+<!-- Component Projection -->
+
+<ng-content></ng-content>
+
+<!-- Pipe - concept -->
+<input placeholder="Search" *ngIf="prods.length" type="text" name="pSearch" id="pSearch" [(ngModel)]="pSearch">
+<ul>
+    <li class="d-flex my-3 px-2 py-2" *ngFor="let prod of prods | searchPipe:pSearch; let i=index">{{prod}}<button type="button" class="btn-primary" (click)="discard(i)">Discard</button></li> 
+      
+  </ul>
